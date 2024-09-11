@@ -1,27 +1,59 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
   background-color: #262626;
+  height: 100%;
 }
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  height: 100%;
 }
 
 .container {
-  margin-inline: 10rem;
+  max-width: 88%;
+  padding-block: 2%;
+  margin-inline: auto;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 0.1fr;
+  row-gap: 4%;
+  grid-template-areas:
+    "images images"
+    "text constrols";
+
+  @media (width < 640px) {
+    grid-template-rows: 100fr 5fr 5fr;
+    padding-bottom: 5vh;
+    grid-template-areas:
+      "images"
+      "constrols"
+      "text";
+  }
 }
 
 /* IMAGES */
-.image {
-  width: 100%;
-  height: 20rem;
-}
-
 .images {
   overflow: hidden;
+  grid-area: images;
+  height: 100%;
 }
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
 .images__slider {
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(4, 100%);
   transition: margin 0.5s ease;
@@ -50,10 +82,11 @@ body {
 
 /* TEXT */
 .text {
-  font-size: 2rem;
+  font-size: 3rem;
   color: #e5e5e5;
   font-weight: bold;
   overflow: hidden;
+  grid-area: text;
 }
 
 .text__slider {
@@ -70,6 +103,11 @@ input[type="radio"] {
 .controls {
   display: flex;
   gap: 0.8rem;
+  grid-area: constrols;
+
+  @media (width < 640px) {
+    justify-self: center;
+  }
 }
 
 .ctrl {
