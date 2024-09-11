@@ -1,0 +1,40 @@
+html {
+  font-size: 62.5%;
+  background-color: #262626;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.controls {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.ctrl {
+  cursor: pointer;
+  border: 4px solid #0284c7;
+  background-color: #0284c7;
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+.ctrl:hover {
+  border-color: #e5e5e5;
+  background-color: #e5e5e5;
+}
+
+#var_1:checked ~ .controls #ctrl_1,
+#var_2:checked ~ .controls #ctrl_2,
+#var_3:checked ~ .controls #ctrl_3,
+#var_4:checked ~ .controls #ctrl_4 {
+  background-color: transparent;
+}
+
+.ctrl:active {
+  border-color: #a3a3a3;
+  background-color: #a3a3a3;
+}
