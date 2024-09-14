@@ -113,7 +113,6 @@ input[type="radio"] {
 
 .controls {
   display: flex;
-  gap: 0.8rem;
   grid-area: constrols;
 
   @media (width < 640px) {
@@ -123,27 +122,37 @@ input[type="radio"] {
 
 .ctrl {
   cursor: pointer;
-  border: 4px solid #0284c7;
-  background-color: #0284c7;
+  border: 1.5rem solid transparent;
   display: block;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -1.5rem;
 }
 
-.ctrl:hover {
+.ctrl__circle {
+  border: 4px solid #0284c7;
+  background-color: #0284c7;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.ctrl:hover .ctrl__circle {
   border-color: #e5e5e5;
   background-color: #e5e5e5;
 }
 
-#var_1:checked ~ .controls #ctrl_1,
-#var_2:checked ~ .controls #ctrl_2,
-#var_3:checked ~ .controls #ctrl_3,
-#var_4:checked ~ .controls #ctrl_4 {
+#var_1:checked ~ .controls #ctrl_1 .ctrl__circle,
+#var_2:checked ~ .controls #ctrl_2 .ctrl__circle,
+#var_3:checked ~ .controls #ctrl_3 .ctrl__circle,
+#var_4:checked ~ .controls #ctrl_4 .ctrl__circle {
   background-color: transparent;
 }
 
-.ctrl:active {
+.ctrl:active .ctrl__circle {
   border-color: #a3a3a3;
   background-color: #a3a3a3;
 }
