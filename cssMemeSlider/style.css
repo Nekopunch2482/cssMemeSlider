@@ -137,7 +137,7 @@ input[type="radio"] {
 }
 
 .ctrl__circle {
-  border: 4px solid #0284c7;
+  border: 0.4rem solid #0284c7;
   background-color: #0284c7;
   width: 100%;
   height: 100%;
